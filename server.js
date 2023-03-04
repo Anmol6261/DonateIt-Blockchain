@@ -1,6 +1,7 @@
 const {createServer}=require('http');
 const next=require('next');
 const routes=require('./routes');
+console.log("Hello World.. ");
 
 const app=next({
   dev: process.env.NODE_ENV !== 'production'
