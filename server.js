@@ -6,7 +6,8 @@ const app=next({
   dev: process.env.NODE_ENV !== 'production'
 });
 
-console.log("Just logging to check if push is working for anmol's mac");
+//console.log("Just logging to check if push is working for anmol's mac");
+// Hello world
 
 const handler=routes.getRequestHandler(app);
 app.prepare().then(()=>{
