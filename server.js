@@ -7,6 +7,7 @@ const app=next({
 });
 
 //console.log("Just logging to check if push is working for anmol's mac");
+// Hello world
 
 const handler=routes.getRequestHandler(app);
 app.prepare().then(()=>{
