@@ -1,12 +1,13 @@
 const {createServer}=require('http');
 const next=require('next');
 const routes=require('./routes');
-console.log("Hello World.. ");
-console.log("Hello World2 ... . ");
 
 const app=next({
   dev: process.env.NODE_ENV !== 'production'
 });
+
+//console.log("Just logging to check if push is working for anmol's mac");
+// Hello world
 
 const handler=routes.getRequestHandler(app);
 app.prepare().then(()=>{
