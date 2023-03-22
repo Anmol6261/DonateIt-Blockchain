@@ -30,7 +30,6 @@ class CampaignIndex extends Component{
 return(
   <Popup
     trigger={
-      <Link route={`/campaigns/${address}`}>
       <Card  id="plc-link">
         <Image src={imgurl} wrapped ui={false} />
         <Card.Content>
@@ -41,7 +40,6 @@ return(
           </Card.Description>
         </Card.Content>
       </Card>
-      </Link>
     }
 
   >
