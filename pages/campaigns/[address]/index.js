@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
-import Layout from '../../components/Layout';
-import Campaign from '../../ethereum/campaign';
+import Layout from '../../../components/Layout';
+import Campaign from '../../../ethereum/campaign';
 import {Card, Grid, Button} from 'semantic-ui-react';
-import web3 from '../../ethereum/web3';
-import ContributeForm from '../../components/ContributeForm';
-import {Link} from '../../routes';
+import web3 from '../../../ethereum/web3';
+import ContributeForm from '../../../components/ContributeForm';
+import Link from 'next/Link';
 
 class CampaignShow extends Component{
  static async getInitialProps(props){
@@ -94,10 +94,8 @@ return <Card.Group items={items} />
 
         <Grid.Row>
          <Grid.Column>
-         <Link route={`/campaigns/${this.props.address}/requests`}>
-         <a>
+         <Link href={`/campaigns/${this.props.address}/requests`}>
            <Button primary>View Transactions</Button>
-         </a>
          </Link>
           </Grid.Column>
         </Grid.Row>

@@ -1,24 +1,30 @@
 import React from 'react';
 import {Menu} from 'semantic-ui-react';
-import {Link} from '../routes';
+// import {Link} from '../routes';
+import Link from 'next/Link';
 
 export default ()=>{
   return (
 <div class="ui inverted segment">
   <div class="ui inverted secondary pointing menu">
 
-      <Link route="/">
-       <a className="item"> DonateIt</a>
+      <Link href="/" className="item">
+       DonateIt
       </Link>
 
       <div class="right item">
-      <Link route="/">
-         <a className="ui inverted button"> Charity Organisations</a>
+      
+      <Link href="/tracking" className="ui inverted orange button" style={{
+            width: "100px",
+            height: "40px",
+            marginRight: "15px"
+          }}>Tracking</Link>
+
+      <Link href="/" className="ui inverted button">
+          Charity Organisations
       </Link>
 
-      <Link route="/campaigns/new">
-         <a className="ui inverted button">+</a>
-      </Link>
+      <Link href="/campaigns/new" className="ui inverted button">+</Link>
 
       </div>
   </div>
