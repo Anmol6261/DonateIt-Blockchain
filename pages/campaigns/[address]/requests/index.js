@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import Layout from '../../../components/Layout';
+import Layout from '../../../../components/Layout';
 import {Button,Table} from 'semantic-ui-react';
-import {Link} from '../../../routes';
-import Campaign from '../../../ethereum/campaign';
-import RequestRow from '../../../components/RequestRow';
+import Link from 'next/Link';
+import Campaign from '../../../../ethereum/campaign';
+import RequestRow from '../../../../components/RequestRow';
 
 class RequestIndex extends Component{
 static async getInitialProps(props){
@@ -37,10 +37,8 @@ renderRows(){
     return(
       <Layout>
         <h3> Transactions</h3>
-        <Link route={`/campaigns/${this.props.address}/requests/new`}>
-        <a>
+        <Link href={`/campaigns/${this.props.address}/requests/new`}>
            <Button primary floated="right" style={{marginBottom: 10}}>Add Transaction</Button>
-         </a>
         </Link>
         <Table>
           <Header>

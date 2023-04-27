@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
 import {Form, Button, Message,Input} from 'semantic-ui-react';
-import web3 from '../../../ethereum/web3';
-import {Link,Router} from '../../../routes';
-import Layout from '../../../components/Layout';
-import Campaign from '../../../ethereum/campaign';
+import web3 from '../../../../ethereum/web3';
+import Link from 'next/link';
+import Router from 'next/router';
+import Layout from '../../../../components/Layout';
+import Campaign from '../../../../ethereum/campaign';
 
 class RequestNew extends Component{
   state={
@@ -45,8 +46,8 @@ class RequestNew extends Component{
   render(){
     return (
     <Layout>
-     <Link route={`/campaigns/${this.props.address}/requests`}>
-      <a>Back</a>
+     <Link href={`/campaigns/${this.props.address}/requests`}>
+      Back
      </Link>
      <h3>Add a Transaction</h3>
       <Form  onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
