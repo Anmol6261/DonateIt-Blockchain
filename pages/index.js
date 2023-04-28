@@ -3,7 +3,7 @@ import factory from '../ethereum/factory';
 import Campaign from '../ethereum/campaign';
 import {Popup,Card , Button, Image, Icon} from 'semantic-ui-react';
 import LayoutMainPage from '../components/LayoutMainPage';
-import {Link} from '../routes';
+import Link from 'next/Link';
 
 class CampaignIndex extends Component{
  static async getInitialProps(){
@@ -19,7 +19,6 @@ class CampaignIndex extends Component{
   img.push(await campaign.methods.imageUrl().call());
   }
 
-  // console.log(img);
 
    return {campaigns,names,img,desc};
  }
@@ -30,7 +29,7 @@ class CampaignIndex extends Component{
 return(
   <Popup
     trigger={
-      <Link route={`/campaigns/${address}`}>
+      <Link href={`/campaigns/${address}`}>
       <Card  id="plc-link">
         <Image src={imgurl} wrapped ui={false} />
         <Card.Content>
@@ -49,25 +48,8 @@ return(
 
   </Popup>
 
-//   <Card class="card1" itemsPerRow = {3}>
-//   <Image src={imgurl} wrapped ui={false} />
-//   <Card.Content>
-//     <Card.Header>{name}</Card.Header>
-//     <Card.Meta ><p>{address}</p></Card.Meta>
-//     <Card.Description>
-//       {description}
-//     </Card.Description>
-//   </Card.Content>
-//   <Card.Content extra>
-//     <a>
-//       <Icon name='search' />
-//       <b>Organisation description</b>
-//     </a>
-//   </Card.Content>
-// </Card>
 );
  }
-
 
 renderCampaigns(){
 
@@ -83,28 +65,6 @@ renderCampaigns(){
     </Card.Group>);
 
   }
-
-
-//  renderCampaigns(){
-//
-//     return (
-//
-//       <Card.Group itemsPerRow={2} stackable={true} doubling={true}>
-//         {this.props.campaigns.map(address => (
-//           <Card key={address} className="fluid">
-//             <Card.Content>
-//               <Card.Header>orgy 1</Card.Header>
-//               <p>{address}</p>
-//               <p>Some more description</p>
-//               <Link route={`/campaigns/${address}`}>
-//               <a >View Charity Organisation</a>
-//               </Link>
-//             </Card.Content>
-//           </Card>
-//         ))}
-//       </Card.Group>
-//     );
-// }
 
   render(){
     return(

@@ -2,7 +2,8 @@ import React,{useState,useEffect} from 'react';
 import Header from './Header';
 import Head from 'next/head';
 import {Container} from 'semantic-ui-react';
-import {Link} from '../routes';
+//import {Link} from '../routes';
+import Link from 'next/Link';
 import {Menu} from 'semantic-ui-react';
 export default (props) =>{
 
@@ -80,17 +81,24 @@ return(
           <a class="toc item">
             <i class="sidebar icon"></i>
           </a>
-          <Link route="/">
-           <a className="active item" > DonateIt</a>
+          <Link href="/" className="active item" >DonateIt
           </Link>
+
+          
 
           <div class="right item">
-          <Link route="/campaigns/new">
-             <a className="ui inverted button">New Charity Registration</a>
+          
+          <Link href="/tracking" className="ui inverted orange button" style={{
+            width: "100px",
+            height: "40px",
+            marginRight: "15px"
+          }}>Tracking</Link>
+
+          <Link href="/campaigns/new" className="ui inverted button">
+             New Charity Registration
           </Link>
 
-          <Link route="/campaigns/new">
-             <a className="ui inverted button">+</a>
+          <Link href="/campaigns/new" className="ui inverted button">+
           </Link>
 
           </div>

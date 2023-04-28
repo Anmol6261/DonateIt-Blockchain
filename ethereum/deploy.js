@@ -5,7 +5,7 @@ const compiledFactory= require('./build/CampaignFactory.json');
 const provider = new HDWalletProvider(
   'olive van clog novel uniform twist dial file depth toward tree shove',
   // remember to change this to your own phrase!
-  'https://rinkeby.infura.io/v3/4994793d56d3452b8ca81ecf33e820e2'
+  'https://sepolia.infura.io/v3/f547f32744d74fa48ddb661bae036dc3'
   // remember to change this to your own endpoint!
 );
 const web3 = new Web3(provider);
