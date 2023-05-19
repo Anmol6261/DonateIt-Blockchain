@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Table,Button} from 'semantic-ui-react';
 import web3 from '../ethereum/web3';
 import Campaign from '../ethereum/campaign';
+import Router from 'next/router';
 
 class RequestRow extends Component{
 
@@ -12,6 +13,7 @@ class RequestRow extends Component{
     await campaign.methods.finalizeRequest(this.props.id).send({
       from: accounts[0]
     });
+    Router.push(`/campaigns/${this.props.address}/requests`);
   }
 
   render(){
